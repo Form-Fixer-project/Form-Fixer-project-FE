@@ -6,7 +6,7 @@ import Img1 from '../../img/mainImg1.svg';
 import Img2 from '../../img/mainImg2.svg';
 import Img3 from '../../img/mainImg3.svg';
 
-function Main() {
+const Main: React.FC = () => {
   const images = [Img1, Img2, Img3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -22,35 +22,38 @@ function Main() {
 
   return (
     <>
+      <S.GlobalStyle />
       <S.Header>
         <img src={Logo} alt="Logo" />
         <S.About>About our Service</S.About>
       </S.Header>
-      <S.Main>
+      <S.MainContainer>
         {images.map((image, index) => (
-          <img
+          <S.Image
             key={index}
             src={image}
             alt={`Main Image ${index + 1}`}
-            style={{
-              opacity: index === currentImageIndex ? 1 : 0,
-              transition: 'opacity 1s ease-in-out',
-              position: 'absolute',
-              width: '100%',
-              height: '92.3%',
-            }}
+            isVisible={index === currentImageIndex}
           />
         ))}
-        <>
-            <div>
-              <div>
-                
-              </div>
-            </div>
-        </>
-      </S.Main>
+        <S.Content>
+          <S.TitleContainer>
+            <S.Title>
+              Form Fixer
+            </S.Title>
+            <S.SubTitle>
+              더욱 완벽하게
+            </S.SubTitle>
+          </S.TitleContainer>
+          <div>
+            <S.MainContent>
+              Push up 푸쉬 업
+            </S.MainContent>
+          </div>
+        </S.Content>
+      </S.MainContainer>
     </>
   );
-}
+};
 
 export default Main;
