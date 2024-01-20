@@ -26,7 +26,8 @@ export const MainContainer = styled.div`
 
 export const Image = styled.img<{ isVisible: boolean }>`
     width: 100%;
-    height: 100%;
+    height: 105%;
+    margin-top: 0;
     position: absolute;
     opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
     transition: opacity 1s ease-in-out;
@@ -42,7 +43,7 @@ export const Content = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-    margin-bottom: 200px;
+    margin-bottom: 120px;
 `;
 
 export const Title = styled.div`
@@ -55,16 +56,34 @@ export const SubTitle = styled.div`
     font-weight: 12;
 `;
 
+export const MainContentContainer = styled.div`
+    display: flex;
+    margin-bottom: 200px;
+`;
+
 export const MainContent = styled.div`
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.5);
     color: black;
     width: 200px;
     height: 170px;
+    margin-right: 50px;
 `;
+
+export const MainContentE = styled.div`
+    font-size: 36px;
+    font-weight: 20px;
+`;
+
+export const MainContentK = styled.div`
+    font-size: 26px;
+    font-weight: 12px;
+`;
+
 
 
 export const About = styled.div`
