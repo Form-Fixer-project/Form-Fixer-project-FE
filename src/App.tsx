@@ -1,10 +1,12 @@
 import React from 'react';
-import Main from './page/main/mainPage'
+// import Main from './page/main/mainPage';
+import About from './page/about/aboutPage';
 
 function App() {
   return (
     <>
-      <Main />
+      {/* <Main /> */}
+      <About />
     </>
   );
 }

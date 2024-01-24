@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './style';
+import Header from '../../component/headerF/header'
 
 import Logo from '../../img/Logo.svg';
 import Img1 from '../../img/mainImg1.svg';
@@ -41,10 +42,7 @@ const Main: React.FC = () => {
   return (
     <>
       <S.GlobalStyle />
-      <S.Header>
-        <img src={Logo} alt="Logo" />
-        <S.About>About our Service</S.About>
-      </S.Header>
+      <Header />
       <S.MainContainer>
         {images.map((image, index) => (
           <S.Image

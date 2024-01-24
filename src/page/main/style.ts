@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
-
 export const Header = styled.div`
     display: flex;
     justify-content: space-between;
