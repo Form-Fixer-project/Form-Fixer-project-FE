@@ -25,7 +25,7 @@ export const MainContainer = styled.div`
 
 export const Image = styled.img<{ isVisible: boolean }>`
     width: 100%;
-    height: 105%;
+    height: 110%;
     margin-top: 0;
     position: absolute;
     opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};

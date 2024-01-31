@@ -10,4 +10,5 @@ export const Header = styled.div`
 export const About = styled.div`
     font-size: 32px;
     font-weight: bold;
-`
+    text-Decoration: none;
+`;
