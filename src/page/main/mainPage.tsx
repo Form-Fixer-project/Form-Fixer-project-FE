@@ -22,27 +22,27 @@ const Main = () => {
     {
       en: 'Push up',
       ko: '푸쉬 업',
-      link: 'exercise/1/'
+      link: '127.0.0.1:8002/push-up'
     },
     {
       en: 'Squart',
       ko: '스쿼트',
-      link: 'exercise/2/'
+      link: '127.0.0.1:8004/squat'
     },
     {
       en: 'Deadlift',
       ko: '데드리프트',
-      link: 'exercise/3/'
+      link: '127.0.0.1:8001/deadlift'
     },
     {
       en: 'Sit Up',
       ko: '윗몸 일으키기',
-      link: 'exercise/4/'
+      link: '127.0.0.1:8003/sit-up'
     },
     {
       en: 'Curls',
       ko: '컬',
-      link: 'exercise/5/'
+      link: '127.0.0.1:8000/curl'
     }
   ];
 
@@ -77,7 +77,7 @@ const Main = () => {
           <S.MainContentContainer>
             {dummyDataList.map((data, dataIndex) => (
               <S.MainContent key={dataIndex}>
-                <Link to={data.link}>
+                <Link to={`https://${data.link}`}>
                   <React.Fragment>
                     <S.MainContentE>{data.en}</S.MainContentE>
                     <S.MainContentK>{data.ko}</S.MainContentK>
