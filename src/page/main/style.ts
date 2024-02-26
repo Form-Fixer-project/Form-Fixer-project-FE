@@ -71,16 +71,26 @@ export const MainContent = styled.div`
     width: 200px;
     height: 170px;
     margin-right: 50px;
+    cursor: pointer;
+
+    &:hover {
+    width: 199px;
+    height: 169px;
+    border: 1px solid black;
+    }
 `;
+
 
 export const MainContentE = styled.div`
     font-size: 36px;
     font-weight: 20px;
+    color: black;
 `;
 
 export const MainContentK = styled.div`
     font-size: 26px;
     font-weight: 12px;
+    color: black;
 `;
 
 

@@ -1,32 +1,49 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import * as S from './style';
-import Header from '../../component/headerF/header'
+import Header from '../../component/headerF/header';
 
 import Logo from '../../img/Logo.svg';
 import Img1 from '../../img/mainImg1.svg';
 import Img2 from '../../img/mainImg2.svg';
 import Img3 from '../../img/mainImg3.svg';
 
-const Main: React.FC = () => {
-  const images = [Img1, Img2, Img3];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+type ExerciseData = {
+  en: string;
+  ko: string;
+  link: string;
+};
 
-  const dummyDataList = [
-    [
-      { en: 'Push up', ko: '푸쉬 업' }
-    ],
-    [
-      { en: 'Squart', ko: '스쿼트' }
-    ],
-    [
-      { en: 'Deadlift', ko: '데드리프트' }
-    ],
-    [
-      { en: 'Machine fly', ko: '버터 플라이' }
-    ],
-    [
-      { en: 'Curls', ko: '컬' }
-    ],
+const Main = () => {
+  const images: string[] = [Img1, Img2, Img3];
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+
+  const dummyDataList: ExerciseData[] = [
+    {
+      en: 'Push up',
+      ko: '푸쉬 업',
+      link: 'exercise/1/'
+    },
+    {
+      en: 'Squart',
+      ko: '스쿼트',
+      link: 'exercise/2/'
+    },
+    {
+      en: 'Deadlift',
+      ko: '데드리프트',
+      link: 'exercise/3/'
+    },
+    {
+      en: 'Sit Up',
+      ko: '윗몸 일으키기',
+      link: 'exercise/4/'
+    },
+    {
+      en: 'Curls',
+      ko: '컬',
+      link: 'exercise/5/'
+    }
   ];
 
   useEffect(() => {
@@ -58,20 +75,14 @@ const Main: React.FC = () => {
             <S.SubTitle>더욱 완벽하게</S.SubTitle>
           </S.TitleContainer>
           <S.MainContentContainer>
-            {dummyDataList.map((dataList, dataIndex) => (
+            {dummyDataList.map((data, dataIndex) => (
               <S.MainContent key={dataIndex}>
-                <React.Fragment>
-                  <S.MainContentE>
-                    {dataList.map((data, index) => (
-                      <div key={index}>{data.en}</div>
-                    ))}
-                  </S.MainContentE>
-                  <S.MainContentK>
-                    {dataList.map((data, index) => (
-                      <div key={index}>{data.ko}</div>
-                    ))}
-                  </S.MainContentK>
-                </React.Fragment>
+                <Link to={data.link}>
+                  <React.Fragment>
+                    <S.MainContentE>{data.en}</S.MainContentE>
+                    <S.MainContentK>{data.ko}</S.MainContentK>
+                  </React.Fragment>
+                </Link>
               </S.MainContent>
             ))}
           </S.MainContentContainer>
